@@ -3,6 +3,9 @@ main:
   - title: "Posts"
     url: /posts/
 
+  - title: "Portfolio"
+    url: /portfolio/
+
   - title: "Categories"
     url: /categories/
 
