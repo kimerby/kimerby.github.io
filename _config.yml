@@ -105,14 +105,11 @@ author:
   name             : "김어비"
   avatar           : "/images/profile/kimerby.jpeg"
   bio              : "이야기와 포트폴리오"
-  location         : "Seoul"
+  location         : "South Korea, Seoul"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
       url: "mailto:your.bunkyee@gmail.com"
-    - label: "Website"
-      icon: "fas fa-fw fa-link"
-      url: "https://kimerby.github.io"
     - label: "Twitter"
       icon: "fab fa-fw fa-twitter-square"
       # url: "https://twitter.com/"
@@ -122,9 +119,16 @@ author:
     - label: "GitHub"
       icon: "fab fa-fw fa-github"
       url: "https://github.com/kimerby"
+    - label: "Website"
+      icon: "fas fa-fw fa-link"
+      url: "https://kimerby.github.io"      
+    - label: "YouTube"
+      icon: "fab fa-fw fa-youtube"
+      url: "https://www.youtube.com/channel/UCmwx27M_JkzUuTWl5ZiC99A"        
     - label: "Instagram"
       icon: "fab fa-fw fa-instagram"
       url: "https://instagram.com/kim.erby"
+    
 
 # Site Footer
 footer:
