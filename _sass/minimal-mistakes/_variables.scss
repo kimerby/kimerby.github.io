@@ -14,7 +14,7 @@ $indent-var: 1.3em !default;
 
 /* system typefaces */
 $serif: Georgia, Times, serif !default;
-$sans-serif: -apple-system, BlinkMacSystemFont, "Gowun Dodum", "Roboto", "Segoe UI",
+$sans-serif: -apple-system, BlinkMacSystemFont, "Noto Sans" "Nanum Gothic", "Gowun Dodum", "Roboto", "Segoe UI",
   "Helvetica Neue", "Lucida Grande", Arial, sans-serif !default;
 $monospace: Monaco, Consolas, "Lucida Console", monospace !default;
 
@@ -34,18 +34,18 @@ $header-font-family: $sans-serif !default;
 $caption-font-family: $serif !default;
 
 /* type scale */
-$type-size-1: 2.441em !default; // ~39.056px
-$type-size-2: 1.953em !default; // ~31.248px
-$type-size-3: 1.563em !default; // ~25.008px
-$type-size-4: 1.25em !default; // ~20px
-$type-size-5: 1em !default; // ~16px
-$type-size-6: 0.75em !default; // ~12px
-$type-size-7: 0.6875em !default; // ~11px
-$type-size-8: 0.625em !default; // ~10px
+$type-size-1: 2.441em !default; // ~39.056px // default : 2.441em
+$type-size-2: 1.953em !default; // ~31.248pxn // default : 1.953em
+$type-size-3: 1.563em !default; // ~25.008px // default : 1.563em
+$type-size-4: 1.25em !default; // ~20px // default : 1.25em
+$type-size-5: 1em !default; // ~16px // 타겟 // default : 1em
+$type-size-6: 0.9em !default; // ~12px // 타겟 // default : 0.75em
+$type-size-7: 0.6875em !default; // ~11px // 타겟 // default : 0.6875em
+$type-size-8: 0.625em !default; // ~10px // 타겟 // default : 0.625em
 
 /* headline scale */
 $h-size-1: 1.563em !default; // ~25.008px
-$h-size-2: 1.25em !default; // ~20px
+$h-size-2: 1.25em !default; // ~20px // 타겟 // default : 1.25em
 $h-size-3: 1.125em !default; // ~18px
 $h-size-4: 1.0625em !default; // ~17px
 $h-size-5: 1.03125em !default; // ~16.5px
