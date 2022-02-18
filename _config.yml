@@ -16,10 +16,10 @@ minimal_mistakes_skin    : "default" # "air", "aqua", "contrast", "dark", "dirt"
 
 # Site Settings
 locale                   : "ko-KR"
-title                    : "Kimerby - 김어비"
-title_separator          : "-"
-subtitle                 : "이야기 조각 모음" # site tagline that appears below site title in masthead
-name                     : "Kimerby - 김어비"
+title                    : "Kimerby | 김어비"
+title_separator          : "|"
+subtitle                 : #"이야기 조각 모음" # site tagline that appears below site title in masthead
+name                     : "Kimerby | 김어비"
 # description              : "김어비 포트폴리오"
 url                      : "https://kimerby.github.io/" # the base hostname & protocol for your site e.g. 
 baseurl                  : # the subpath of your site, e.g. "/blog"
@@ -104,8 +104,8 @@ analytics:
 author:
   name             : "김어비"
   avatar           : "/images/profile/kimerby.jpeg"
-  bio              : "이야기와 포트폴리오"
-  location         : "South Korea, Seoul"
+  bio              : "Product Manager & Creator"
+  location         : "Seoul"
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
@@ -130,27 +130,27 @@ author:
       url: "https://instagram.com/kim.erby"
     
 
-# Site Footer
-footer:
-  links:
-    - label: "Twitter"
-      icon: "fab fa-fw fa-twitter-square"
-      # url:
-    - label: "Facebook"
-      icon: "fab fa-fw fa-facebook-square"
-      # url:
-    - label: "GitHub"
-      icon: "fab fa-fw fa-github"
-      # url:
-    - label: "GitLab"
-      icon: "fab fa-fw fa-gitlab"
-      # url:
-    - label: "Bitbucket"
-      icon: "fab fa-fw fa-bitbucket"
-      # url:
-    - label: "Instagram"
-      icon: "fab fa-fw fa-instagram"
-      # url:
+# # Site Footer
+# footer:
+#   links:
+#     - label: "Twitter"
+#       icon: "fab fa-fw fa-twitter-square"
+#       # url:
+#     - label: "Facebook"
+#       icon: "fab fa-fw fa-facebook-square"
+#       # url:
+#     - label: "GitHub"
+#       icon: "fab fa-fw fa-github"
+#       # url:
+#     - label: "GitLab"
+#       icon: "fab fa-fw fa-gitlab"
+#       # url:
+#     - label: "Bitbucket"
+#       icon: "fab fa-fw fa-bitbucket"
+#       # url:
+#     - label: "Instagram"
+#       icon: "fab fa-fw fa-instagram"
+#       # url:
 
 
 # Reading Files
@@ -285,6 +285,35 @@ defaults:
       author_profile: false
       share: true
 
+    collections:
+      portfolio:
+        output: true
+        permalink: /:collection/:path/
+
+picture:
+  source: "assets/images" #"assets/images/_originals"
+  output: "assets/images"
+  markup: "picture"
+  presets:
+    hero:
+      attr:
+        class: "page__hero-image"
+        itemprop: "image"
+      ppi: [1]
+      source_1600:
+        media: "(min-width: 1600px)"
+        width: "1600"
+      source_1024:
+        media: "(min-width: 1024px)"
+        width: "1024"
+      source_768:
+        media: "(min-width: 768px)"
+        width: "768"
+      source_600:
+        media: "(min-width: 600px)"
+        width: "600"
+      source_default:
+        width: "320"
 
 # Sass/SCSS
 sass:

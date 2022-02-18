@@ -1,0 +1,28 @@
+I"©<!-- 
+<figure style="width: 30%" class="align-right">
+  <img src="http://localhost:4000/assets/images/hawaii.jpg" alt="">
+</figure>  
+-->
+
+<p>I am</p>
+
+<h2 class="text-justify" id="my-background">My Background</h2>
+
+<!-- <figure style="width: 30%" class="align-right">
+  <img src="http://localhost:4000/assets/images/Ukraine-Analysen-800.jpg" alt="">
+</figure>  -->
+
+<ul>
+  <li><strong>Strategic Planning</strong> - defined the strategic</li>
+  <li><strong>Collaborate &amp; Coordinate</strong> - built relationships with</li>
+</ul>
+
+<h3 id="achievements">Achievements:</h3>
+
+<h3 id="keywords">Keywords:</h3>
+
+<p>Python (Pandas, Numpy, Sklearn)</p>
+
+<h2 id="hobbies">Hobbies</h2>
+
+:ET
