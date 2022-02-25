@@ -19,12 +19,13 @@
   @include breakpoint($large) {
     float: left;
     width: calc(#{$right-sidebar-width-narrow} - 1em);
-    opacity: 0.75;
-    -webkit-transition: opacity 0.2s ease-in-out;
-    transition: opacity 0.2s ease-in-out;
+    max-width: 225px; //kimerby comment : 포트폴리오 사이드바 이미지 최대 크기 설정
+    //opacity: 0.75; // kimerby comment : 이미지 불투명효과 제거
+    //-webkit-transition: opacity 0.2s ease-in-out;
+    //transition: opacity 0.2s ease-in-out;
 
     &:hover {
-      opacity: 1;
+      //opacity: 1; //kimerby comment : 마우스오버 효과 제거
     }
 
     &.sticky {
@@ -134,7 +135,7 @@
   }
 
   img {
-    max-width: 110px;
+    max-width: 140px; //kimerby, default : 110px
     border-radius: 50%;
 
     @include breakpoint($large) {
