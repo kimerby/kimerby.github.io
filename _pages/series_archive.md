@@ -1,8 +1,8 @@
-<!-- ---
-title: Portfolio
+---
+title: Series
 layout: collection
-permalink: /portfolio/
+permalink: /series/
 collection: portfolio
 entries_layout: grid
 classes: wide
---- -->
+---

@@ -225,7 +225,6 @@ collections:
     output: true
     permalink: /:collection/:path/
 
-
 # Defaults
 defaults:
   # _posts
@@ -275,7 +274,7 @@ defaults:
       layout: single
       author_profile: true
       share: true
-      comment: true
+      comment: 
   # _portfolio
   - scope:
       path: ""
@@ -284,7 +283,6 @@ defaults:
       layout: single
       author_profile: false
       share: true
-
     collections:
       portfolio:
         output: true

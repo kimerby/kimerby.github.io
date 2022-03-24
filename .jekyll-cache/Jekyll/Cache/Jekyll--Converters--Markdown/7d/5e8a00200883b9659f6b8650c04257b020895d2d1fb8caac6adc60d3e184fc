@@ -1,0 +1,2 @@
+I"Ù<p>In this project, I implemented different recommendation engines for users of the IBM Watson Studio platform. <br /> - <em>Rank Based Recommendations</em>: recommended the most popular articles based on the highest user interactions <br /> - <em>User-User Based Collaborative Filtering</em>: recommended unseen articles that were viewed by most similar users <br /> - <em>Content Based Recommendations</em>: recommended articles based on similarity of content <br /></p>
+:ET

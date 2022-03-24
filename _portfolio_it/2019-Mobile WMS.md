@@ -1,9 +1,9 @@
 ---
 layout: single
-title: "격리 일기 @China Xi'an"
-year: 2021
-date: 2021-08-10T10:20:00+09:00
-excerpt: "코로나 시대의 중국 시안 격리 일기"
+title: "Mobile WMS 프로젝트"
+year: 2019
+date: 2019-01-01T10:20:00+09:00
+excerpt: "Mobile WMS 프로젝트"
 header:
   image: /images/quarantine_diary/day1_airport.jpg
   teaser: /images/quarantine_diary/day2_street.jpg
@@ -26,7 +26,27 @@ gallery:
     alt: "placeholder image 3"
 ---
 
-Pictures of Goats section West Seattle Blog dingbat newspaper rubber cement Google+ newsroom cafe news.me rubber cement, Ushahidi Kindle Single syndicated Instagram HuffPo community mthomps, Mozilla iPhone app should isn't a business model curmudgeon Snarkmarket Tim Carmody production of innocence. Fuego tweets community DocumentCloud metered model Gardening & War section YouTube social media SEO information overload analytics Aron Pilhofer Journal Register data visualization WikiLeaks Groupon, collaboration Steve Jobs we need a Nate Silver AP What Would Google Do the power of the press belongs to the person who owns one Clay Shirky curmudgeon Voice of San Diego free as in beer dead trees the notion of the public Lucius Nieman.
+삼성전자 Mobile 기반 자재관리 플랫폼 구축 프로젝트
+
+## 1. 프로젝트 개요
+- 배경 : 
+- 목표 : 
+- 기간 : 2018.07 ~ 2019.07 (1년)
+- 역할 : 설계/개발/운영
+- 팀 멤버 구성(기여도 표현) : 
+- 사용 툴 :
+- 내용
+ . 입/출고, 재고관리 프로세스 PI
+ . 모바일 UI/UX 설계 (기능 : 입/출고, Picking, Kitting 등)
+ . 생산계획 기반 출고지시 Planning 설계/개발
+ . 삼성전자 베트남 모바일 법인 Set-up 출장 (브라질, 러시아, 폴란드 법인 확산 적용)
+
+## 2. 문제 분석 및 해결
+- 현황 분석 :
+- 문제점 :
+- 해결 방법 :
+
+## 3. 성과
 
 {% include gallery caption="This is a sample gallery to go along with this case study." %}
 
