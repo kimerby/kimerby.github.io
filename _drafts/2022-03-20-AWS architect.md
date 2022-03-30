@@ -4,7 +4,7 @@ date: 2022-03-20T14:00:00+09:00
 categories:
   - AWS
 tags:
-  - cloud
+  - Cloud
   - AWS
   - Architect
 toc: true
