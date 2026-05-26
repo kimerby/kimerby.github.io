@@ -1,0 +1,69 @@
+---
+import type { CollectionEntry } from "astro:content";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import { slugifyStr } from "@/utils/slugify";
+import { getPath } from "@/utils/getPath";
+import Datetime from "./Datetime.astro";
+
+type Props = {
+  variant?: "h2" | "h3";
+} & CollectionEntry<"blog">;
+
+const { variant: Heading = "h2", id, data, filePath } = Astro.props;
+
+const { title, description, ogImage, ...props } = data;
+
+// image() 검증기가 성공하면 ImageMetadata 객체, 실패하면 string
+const resolvedImage: ImageMetadata | null =
+  ogImage && typeof ogImage !== "string" ? (ogImage as ImageMetadata) : null;
+const fallbackSrc: string | null =
+  typeof ogImage === "string" ? ogImage : null;
+const hasImage = !!(resolvedImage || fallbackSrc);
+---
+
+<li class="my-6">
+  <a
+    href={getPath(id, filePath)}
+    class:list={[
+      "group flex gap-4 rounded-lg",
+      "focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-accent",
+      hasImage ? "items-start" : "flex-col",
+    ]}
+  >
+    {resolvedImage && (
+      <div class="h-24 w-36 shrink-0 overflow-hidden rounded-md sm:h-28 sm:w-44">
+        <Image
+          src={resolvedImage}
+          alt={title}
+          width={176}
+          height={112}
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    )}
+    {!resolvedImage && fallbackSrc && (
+      <div class="h-24 w-36 shrink-0 overflow-hidden rounded-md sm:h-28 sm:w-44">
+        <img
+          src={fallbackSrc}
+          alt={title}
+          width={176}
+          height={112}
+          class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-105"
+          loading="lazy"
+        />
+      </div>
+    )}
+    <div>
+      <Heading
+        class:list={["text-lg font-medium text-accent transition-colors duration-200 group-hover:text-accent/75"]}
+        style={{ viewTransitionName: slugifyStr(title.replaceAll(".", "-")) }}
+      >
+        {title}
+      </Heading>
+      <Datetime {...props} />
+      <p class="mt-1 text-sm">{description}</p>
+    </div>
+  </a>
+</li>

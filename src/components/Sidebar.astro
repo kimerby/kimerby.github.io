@@ -1,0 +1,107 @@
+---
+import { Image } from "astro:assets";
+import profileImage from "@/assets/images/profile/kimerby.jpeg";
+import IconMail from "@/assets/icons/IconMail.svg";
+import IconGitHub from "@/assets/icons/IconGitHub.svg";
+import IconLinkedin from "@/assets/icons/IconLinkedin.svg";
+import { SITE } from "@/config";
+
+// ── 소셜 링크 수정은 여기서 ───────────────────
+const socials = [
+  {
+    label: "Email",
+    href: "mailto:bunkyee@gmail.com",
+    type: "mail",
+  },
+  {
+    label: "GitHub",
+    href: "https://github.com/kimerby",
+    type: "github",
+    external: true,
+  },
+  {
+    label: "Website",
+    href: "https://kimerby.github.io/",
+    type: "website",
+    external: true,
+  },
+  {
+    label: "YouTube",
+    href: "https://youtube.com/@kimerby",  // 실제 URL로 변경하세요
+    type: "youtube",
+    external: true,
+  },
+  {
+    label: "Instagram",
+    href: "https://instagram.com/kimerby",  // 실제 URL로 변경하세요
+    type: "instagram",
+    external: true,
+  },
+  {
+    label: "LinkedIn",
+    href: "https://linkedin.com/in/kimerby",  // 실제 URL로 변경하세요
+    type: "linkedin",
+    external: true,
+  },
+];
+---
+
+<div class="flex flex-col items-center text-center">
+
+  <!-- 프로필 이미지 -->
+  <a href="/">
+    <Image
+      src={profileImage}
+      alt={SITE.author}
+      width={128}
+      height={128}
+      class="size-32 rounded-full object-cover ring-2 ring-border hover:opacity-90 transition-opacity"
+      loading="eager"
+    />
+  </a>
+
+  <!-- 이름 / 소개 -->
+  <div class="mt-5">
+    <a href="/" class="text-lg font-semibold hover:text-accent transition-colors">
+      {SITE.author}
+    </a>
+    <p class="mt-1.5 text-sm leading-relaxed opacity-60">{SITE.desc}</p>
+  </div>
+
+  <!-- 구분선 -->
+  <hr class="my-5 w-full border-border" />
+
+  <!-- 소셜 링크 -->
+  <nav class="flex flex-col gap-3 w-full text-left">
+    {socials.map(({ label, href, type, external }) => (
+      <a
+        href={href}
+        target={external ? "_blank" : undefined}
+        rel={external ? "noopener noreferrer" : undefined}
+        class="flex items-center gap-2.5 text-sm opacity-60 hover:opacity-100 hover:text-accent transition-all"
+      >
+        <!-- 아이콘 -->
+        {type === "mail" && <IconMail class="size-[15px] shrink-0" />}
+        {type === "github" && <IconGitHub class="size-[15px] shrink-0" />}
+        {type === "linkedin" && <IconLinkedin class="size-[15px] shrink-0" />}
+        {type === "website" && (
+          <svg class="size-[15px] shrink-0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"/><path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"/><path d="M2 12h20"/>
+          </svg>
+        )}
+        {type === "youtube" && (
+          <svg class="size-[15px] shrink-0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/><path d="m10 15 5-3-5-3z"/>
+          </svg>
+        )}
+        {type === "instagram" && (
+          <svg class="size-[15px] shrink-0" xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        )}
+        {label}
+      </a>
+    ))}
+  </nav>
+
+</div>

@@ -1,2 +1,0 @@
-I"�<p>In a series of Marketing Analytics projects, I used Online Retail II dataset to create cohorts based on monthly data, calculated retention rates and visualized them via a heatmap. Then I created RFM (Recency, Frequency, Monetary) segments, calculated RFM Score for each customer and segmented into 3 custom segments ‘Top’, ‘Middle’ and ‘Low’ based on the total RFM Score. Finally, I calculated the revenue-based CLV (Customer Lifetime Value) for each customer.</p>
-:ET

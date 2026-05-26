@@ -1,0 +1,95 @@
+---
+import { getCollection } from "astro:content";
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Main from "@/layouts/Main.astro";
+import { getSeriesPosts } from "@/utils/getSeries";
+import { slugifyStr } from "@/utils/slugify";
+import { SITE } from "@/config";
+
+const allPosts = await getCollection("blog");
+const seriesEntries = await getCollection("series");
+
+function formatDate(date: Date) {
+  return date.toLocaleDateString("ko-KR", {
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).replace(/\. /g, ".").replace(/\.$/, "");
+}
+---
+
+<Layout title={`Series | ${SITE.title}`}>
+  <Header />
+  <Main pageTitle="Series" pageDesc="주제별로 묶인 포스트 시리즈입니다.">
+    <ul>
+      {seriesEntries.map(entry => {
+        const slug = entry.id; // 파일명이 곧 slug (예: "격리일기", "aws")
+        const { title, description, ogImage } = entry.data;
+
+        const resolvedImage: ImageMetadata | null =
+          ogImage && typeof ogImage !== "string" ? (ogImage as ImageMetadata) : null;
+        const fallbackSrc: string | null =
+          typeof ogImage === "string" ? ogImage : null;
+        const hasImage = !!(resolvedImage || fallbackSrc);
+
+        const posts = getSeriesPosts(allPosts, slugifyStr(slug));
+        const firstDate = posts[0]?.data.pubDatetime;
+        const lastDate = posts[posts.length - 1]?.data.pubDatetime;
+        const dateRange =
+          firstDate && lastDate
+            ? firstDate.getTime() === lastDate.getTime()
+              ? formatDate(firstDate)
+              : `${formatDate(firstDate)} – ${formatDate(lastDate)}`
+            : "";
+
+        return (
+          <li class="my-6">
+            <a
+              href={`/series/${slugifyStr(slug)}`}
+              class:list={[
+                "group flex gap-4 rounded-lg",
+                "transition-opacity hover:opacity-80",
+                hasImage ? "items-start" : "flex-col",
+              ]}
+            >
+              {resolvedImage && (
+                <Image
+                  src={resolvedImage}
+                  alt={title}
+                  width={176}
+                  height={112}
+                  class="h-24 w-36 shrink-0 rounded-md object-cover sm:h-28 sm:w-44"
+                  loading="lazy"
+                />
+              )}
+              {!resolvedImage && fallbackSrc && (
+                <img
+                  src={fallbackSrc}
+                  alt={title}
+                  class="h-24 w-36 shrink-0 rounded-md object-cover sm:h-28 sm:w-44"
+                  loading="lazy"
+                />
+              )}
+              <div>
+                <h2 class="text-lg font-medium text-accent">{title}</h2>
+                {(dateRange || posts.length > 0) && (
+                  <div class="flex items-center gap-2 text-sm opacity-70 mt-1">
+                    {dateRange && <span>{dateRange}</span>}
+                    {dateRange && posts.length > 0 && <span aria-hidden="true">·</span>}
+                    {posts.length > 0 && <span>{posts.length}편</span>}
+                  </div>
+                )}
+                {description && <p class="mt-1 text-sm">{description}</p>}
+              </div>
+            </a>
+          </li>
+        );
+      })}
+    </ul>
+  </Main>
+  <Footer />
+</Layout>
