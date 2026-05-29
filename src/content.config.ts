@@ -41,11 +41,16 @@ const portfolio = defineCollection({
   schema: ({ image }) =>
     z.object({
       title: z.string(),
-      year: z.string(),
+      year: z.string().optional(),
+      start: z.string().optional(),
+      end: z.string().optional(),
       category: z.enum(["creative", "it"]),
       type: z.string().optional(),
-      description: z.string(),
+      description: z.string().optional(),
+      achievement: z.string().optional(),
+      role: z.string().optional(),
       tags: z.array(z.string()).default([]),
+      tech: z.array(z.string()).default([]),
       ogImage: image().or(z.string()).optional(),
       links: z
         .array(z.object({ label: z.string(), href: z.string() }))

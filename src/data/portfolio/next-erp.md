@@ -1,10 +1,14 @@
 ---
 title: "Next ERP"
-year: "2021"
+start: "2021.03"
+end: "2022.06"
 category: "it"
 type: "ERP"
-description: "제조업 기반 차세대 ERP 시스템 기획 및 PM. 생산·재고·회계 모듈 통합 설계, 현업 요구사항 수집 및 UAT 주도. 200명 이상 사용자 대상으로 성공 오픈."
-tags: ["ERP", "PM", "제조업", "시스템 기획"]
+description: "제조업 기반 차세대 ERP 시스템 기획 및 PM"
+achievement: "성과를 여기에 입력하세요"
+role: "역할을 여기에 입력하세요"
+tech: ["ERP", "PM", "제조업", "시스템 기획"]
+tags: []
 links: []
 order: 1
 ---
