@@ -1,0 +1,174 @@
+---
+import Layout from "@/layouts/Layout.astro";
+import Header from "@/components/Header.astro";
+import Footer from "@/components/Footer.astro";
+import Breadcrumb from "@/components/Breadcrumb.astro";
+import { SITE } from "@/config";
+
+const career = [
+  {
+    company: "SK On",
+    period: "2022.07 – 현재",
+    roles: [
+      {
+        title: "ERP Part Lead",
+        period: "2023.12 – 현재",
+        description: "경영관리DT팀 ERP파트 리더",
+        side: "Project Manager, GSI ERP (2024.11 – 현재 겸직)",
+        tasks: [
+          "Global ERP (GSI, S/4HANA PCE) 구축 및 거버넌스 총괄 (겸임)",
+          "ERP 연간 경영 계획 및 예산/인력 운영 전략 기획",
+          "ERP 포탈(ITSM) 생성형 AI 연계 PoC 기획 및 총괄",
+        ],
+      },
+      {
+        title: "Project Manager | Global JV System Implementation",
+        period: "2023.03 – 2024.08",
+        description: "신설 합작법인(BlueOval SK) 비즈니스 셋업 및 글로벌 표준 시스템 조기 안정화",
+        tasks: [
+          "합작법인 ERP 아키텍처 설계 및 구축 (SAP S/4HANA)",
+          "SAP Concur 기반 경비 관리 체계 수립 (2023.03 – 2023.09)",
+          "본사-Ford(Partner)-JV 현지인력 간 글로벌 협업 리딩",
+        ],
+      },
+      {
+        title: "Senior Solution Architect | Finance & SCM",
+        period: "2022.07 – 2023.12",
+        tasks: [
+          "글로벌 법인 확장에 따른 재무·물류 End-to-End 프로세스 설계 및 가시성 강화",
+        ],
+      },
+    ],
+  },
+  {
+    company: "SAMSUNG SDS",
+    period: "2013.02 – 2022.07",
+    roles: [
+      {
+        title: "Senior ERP Application Engineer & Architect",
+        period: "2021.04 – 2022.07",
+        tasks: [
+          "삼성전자 차세대 ERP(N-ERP) 글로벌 프로세스 설계 및 표준 최적화 주도",
+        ],
+      },
+      {
+        title: "SAP ERP SCM Consultant",
+        period: "2018.12 – 2022.01",
+        tasks: [
+          "N-ERP MM 프로세스 설계 및 아키텍처 최적화 (2020.06 – 2022.01)",
+          "삼성전자 베트남 법인(SEV, SEVT) 모바일 WMS 구축 (2018.12 – 2019.07)",
+        ],
+      },
+      {
+        title: "SAP ERP Application Engineer",
+        period: "2014.08 – 2020.06",
+        tasks: [
+          "삼성전자 G-ERP MM(조달/자재관리) 모듈 아키텍처 설계 및 글로벌 사업장 운영 안정화",
+        ],
+      },
+      {
+        title: "Process Consultant",
+        period: "2013.02 – 2014.08",
+        tasks: [
+          "삼성전자 Global SRM 구매 기준정보 거버넌스 정책 및 관리 워크플로우 설계",
+        ],
+      },
+    ],
+  },
+];
+
+const skills = [
+  "재무·SCM End-to-End 프로세스 설계 및 글로벌 표준화 (FI/TR/CO/MM/SD)",
+  "대형 ERP 전환 프로그램 기획 및 총괄 — 아키텍처 설계부터 Cut-over, 안정화까지",
+  "다국적 이해관계자 조율 및 프로젝트 거버넌스 체계 구축",
+  "IT 예산·계약·SLA·감사 등 IT기획 전반 운영",
+];
+---
+
+<Layout title={`About | ${SITE.title}`}>
+  <Header />
+  <Breadcrumb />
+  <main id="main-content" class="app-layout">
+    <section id="about" class="mb-28 max-w-app">
+
+      <h1 class="text-2xl font-semibold tracking-wider sm:text-3xl">About</h1>
+
+      <!-- 인트로 -->
+      <p class="mt-6 text-base leading-relaxed">
+        안녕하세요, <strong>김어비</strong>입니다.<br />
+        SAP ERP 전문가로 SAMSUNG SDS(9년 6개월)와 SK On(4년+)에서 글로벌 ERP 구축 및 ERP 파트를 이끌고 있습니다.
+      </p>
+
+      <hr class="my-8 border-dashed border-skin-line" />
+
+      <!-- 경력 타임라인 -->
+      <h2 class="mb-6 text-xl font-semibold">경력</h2>
+
+      <div class="space-y-10">
+        {career.map(({ company, period, roles }) => (
+          <div>
+            <!-- 회사 헤더 -->
+            <div class="mb-4 flex items-center gap-3">
+              <span class="text-base font-bold">{company}</span>
+              <span class="text-sm opacity-50">{period}</span>
+            </div>
+
+            <!-- 타임라인 -->
+            <div class="ml-1.5 border-l-2 border-skin-line">
+              {roles.map(({ title, period: rPeriod, description, side, tasks }) => (
+                <div class="relative pl-6 pb-5 last:pb-0">
+                  <div class="absolute -left-[0.375rem] top-1.5 h-2.5 w-2.5 rounded-full bg-accent" />
+
+                  <div class="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+                    <span class="text-sm font-semibold">{title}</span>
+                    <span class="text-xs opacity-50">{rPeriod}</span>
+                  </div>
+                  {side && (
+                    <div class="mt-0.5 text-xs text-accent opacity-80">↳ {side}</div>
+                  )}
+                  {description && (
+                    <p class="mt-1 text-sm leading-relaxed opacity-75">{description}</p>
+                  )}
+                  {tasks && tasks.length > 0 && (
+                    <ul class="mt-1 space-y-0.5">
+                      {tasks.map(task => (
+                        <li class="flex gap-1.5 text-sm leading-relaxed opacity-75">
+                          <span class="shrink-0">-</span>
+                          <span>{task}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <hr class="my-8 border-dashed border-skin-line" />
+
+      <!-- 핵심 역량 -->
+      <h2 class="mb-4 text-xl font-semibold">핵심 역량</h2>
+      <ul class="space-y-1.5 text-sm">
+        {skills.map(skill => (
+          <li class="flex items-start gap-2 opacity-80">
+            <span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-accent" />
+            {skill}
+          </li>
+        ))}
+      </ul>
+
+      <hr class="my-8 border-dashed border-skin-line" />
+
+      <!-- Contact -->
+      <h2 class="mb-4 text-xl font-semibold">Contact</h2>
+      <ul class="space-y-1.5 text-sm">
+        <li><strong>Email</strong>: <a href="mailto:bunkyee@gmail.com" class="text-accent hover:underline">bunkyee@gmail.com</a></li>
+        <li><strong>GitHub</strong>: <a href="https://github.com/kimerby" class="text-accent hover:underline" target="_blank">github.com/kimerby</a></li>
+      </ul>
+
+    </section>
+  </main>
+  <Footer />
+</Layout>
