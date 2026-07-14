@@ -26,6 +26,8 @@ jobs:
       - uses: actions/configure-pages@v5
       - run: npm ci
       - run: npm run build
+        env:
+          PUBLIC_GOOGLE_SITE_VERIFICATION: 6JwvXLRktfCJRozjhsX7EX94MEMJITH3czTnAmC3wA0
       - uses: actions/upload-pages-artifact@v3
         with:
           path: dist
