@@ -20,17 +20,18 @@ export async function getStaticPaths() {
 }
 
 const { entry } = Astro.props;
-const { title, year, type, description, tags, ogImage: initOgImage, links } =
+const { title, year, type, description, tags, ogImage: initOgImage, heroImage: initHeroImage, links } =
   entry.data;
 
 const { Content, headings } = await render(entry);
 
+const rawHero = initHeroImage ?? initOgImage;
 const heroImage: ImageMetadata | null =
-  initOgImage && typeof initOgImage !== "string"
-    ? (initOgImage as ImageMetadata)
+  rawHero && typeof rawHero !== "string"
+    ? (rawHero as ImageMetadata)
     : null;
 const heroSrc: string | null =
-  !heroImage && typeof initOgImage === "string" ? initOgImage : null;
+  !heroImage && typeof rawHero === "string" ? rawHero : null;
 ---
 
 <Layout

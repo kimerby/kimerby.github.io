@@ -52,6 +52,7 @@ const portfolio = defineCollection({
       tags: z.array(z.string()).default([]),
       tech: z.array(z.string()).default([]),
       ogImage: image().or(z.string()).optional(),
+      heroImage: image().or(z.string()).optional(),
       links: z
         .array(z.object({ label: z.string(), href: z.string() }))
         .default([]),
